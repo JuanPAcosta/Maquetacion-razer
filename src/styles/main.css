@@ -1,0 +1,415 @@
+/* roboto-regular - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../assets/fonts/roboto-v29-latin-regular.woff2"),
+        url("../assets/fonts/roboto-v29-latin-regular.woff");
+}
+
+:root {
+    --razer-green: #44d62c;
+    --razer-dark: #111;
+    --razer-soft: #222;
+    --black: black;
+    --white: white;
+    --gray: #888;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.small-text {
+    font-size: 1.5rem;
+}
+
+.page-container {
+    background-color: var(--razer-dark);
+    padding-left: 40px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 10% 55% 35%;
+    grid-template-areas:
+        "header sidebar"
+        "main sidebar"
+        "footer sidebar";
+}
+
+header {
+    grid-area: header;
+    display: flex;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer {
+    grid-area: footer;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+.header-navbar {
+    width: 100%;
+    align-self: center;
+    animation: 2s navbar-animation 0.5s ease-out;
+}
+
+@keyframes navbar-animation {
+    0% {
+        transform: translateY(-200px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.header-navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+}
+
+.header-navbar li {
+    width: auto;
+}
+
+.header-navbar li:not(.navbar-image) :hover {
+    background-color: var(--razer-soft);
+    color: var(--razer-green);
+}
+
+.header-navbar li a {
+    text-decoration: none;
+    color: var(--gray);
+    padding: 16px;
+}
+
+.navbar-image {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-right: 16px;
+}
+
+.navbar-image img {
+    width: 30px;
+}
+
+.main-container {
+    width: 100%;
+    animation: 2s main-animation 0.5s ease-out;
+}
+
+@keyframes main-animation {
+    0% {
+        transform: translateY(-1000px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.main-container .subtitle {
+    color: white;
+    padding-left: 60px;
+}
+
+.main-container .title {
+    color: var(--razer-green);
+}
+
+.main-container .small-text {
+    color: var(--gray);
+}
+
+.products-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    min-width: 700px;
+    align-items: center;
+    animation: 2s footer-animation 0.5s ease-out;
+}
+
+@keyframes footer-animation {
+    0% {
+        transform: translateY(+500px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.product-card p:nth-child(1) {
+    margin: 20px 0 0 0;
+    color: var(--white);
+}
+
+.product-card p:nth-child(2) {
+    margin: 8px 0 0 0;
+    color: #44d62c;
+}
+
+.product-card {
+    width: 32%;
+    text-align: center;
+    height: 90%;
+    background-color: white;
+}
+
+.product-card:hover {
+    cursor: pointer;
+}
+
+#mouse-card {
+    background-image: url(https://assets2.razerzone.com/images/pnx.assets/cd9237a6f61e604675e80e0c098f5a64/mice-category-558x587-desktop.jpg);
+    background-position: center;
+}
+
+#keyboard-card {
+    background-image: url(https://assets2.razerzone.com/images/pnx.assets/cd9237a6f61e604675e80e0c098f5a64/keyboards-category-558x587-desktop.jpg);
+    background-position: center;
+}
+
+#headphones-card {
+    background-image: url(https://assets2.razerzone.com/images/pnx.assets/cd9237a6f61e604675e80e0c098f5a64/audio-category-558x587-desktop.jpg);
+    background-position: center;
+}
+
+aside {
+    display: flex;
+}
+
+aside div {
+    width: 100%;
+}
+
+.aside__left {
+    position: relative;
+    animation: 2s aside-left-animation 0.5s ease-out;
+    z-index: 2;
+}
+
+@keyframes aside-left-animation {
+    0% {
+        transform: translateX(+500px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.aside__left img {
+    width: 300px;
+    position: absolute;
+    right: calc(0% - (300px * 0.4));
+    top: calc(50% - (300px * 0.5));
+}
+
+.aside__right {
+    background-color: var(--razer-soft);
+    display: flex;
+    flex-direction: column;
+    animation: 2s aside-right-animation 0.5s ease-out;
+    z-index: 1;
+}
+
+@keyframes aside-right-animation {
+    0% {
+        transform: translateX(+500px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.aside__right p {
+    margin: 0;
+    color: var(--razer-green);
+    text-align: center;
+}
+
+.aside-text {
+    padding: 40px 0;
+    border-bottom: 12px solid var(--razer-dark);
+    text-transform: uppercase;
+}
+
+.aside-image-container {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.aside__right img {
+    width: 30%;
+    padding-right: 20px;
+    height: 60%;
+    align-self: center;
+}
+
+#modal-container {
+    background-color: rgba(136, 136, 136, 0.349);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 4;
+    display: grid;
+    place-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#product-modal {
+    margin-bottom: 120px;
+    width: 600px;
+    height: 500px;
+    background-color: var(--razer-dark);
+    z-index: 5;
+    border: 1px solid var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#product-modal p {
+    margin: 40px 0 0 0;
+    color: white;
+}
+
+#product-modal span {
+    color: var(--razer-green);
+}
+
+.slider-modal {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+}
+
+.modal-cards {
+    margin-top: 28px;
+    background-color: var(--razer-soft);
+    width: 35%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.modal__first {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    opacity: 35%;
+    height: 70%;
+}
+
+.modal__second {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (35% / 2));
+    z-index: 5;
+    height: 80%;
+}
+
+.modal__third {
+    position: absolute;
+    top: 5%;
+    right: 20%;
+    opacity: 35%;
+    height: 70%;
+}
+
+#close-modal {
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
+}
+
+#product-modal #close-modal p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--razer-green);
+}
+
+#close-modal:hover {
+    cursor: pointer;
+}
+
+.mouse__image-1 {
+    background-image: url("../assets/imagenes/razer-mouse-claw.png");
+    background-size: cover;
+}
+
+.mouse__image-2 {
+    background-image: url("../assets/imagenes/razer-mouse-finger.png");
+    background-size: cover;
+}
+
+.mouse__image-3 {
+    background-image: url("../assets/imagenes/razer-mouse-palm.png");
+    background-size: cover;
+}
+
+.keyboard__image-1 {
+    background-image: url("../assets/imagenes/razer-keyboard-half.png");
+}
+
+.keyboard__image-2 {
+    background-image: url("../assets/imagenes/razer-keyboard-lol.png");
+}
+
+.keyboard__image-3 {
+    background-image: url("../assets/imagenes/razer-keyboard-mini.png");
+}
+
+.audio__image-1 {
+    background-image: url("../assets/imagenes/razer-headphones-black.png");
+}
+
+.audio__image-2 {
+    background-image: url("../assets/imagenes/razer-headphones-green.png");
+}
+
+.audio__image-3 {
+    background-image: url("../assets/imagenes/razer-headphones-pink.png");
+}
